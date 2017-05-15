@@ -1,0 +1,24 @@
+.main-area{
+  margin-top: 1rem;
+}
+
+.image-container{
+  height: 60vh;
+  padding: 0.5rem;
+}
+
+.image-area{
+  max-height: 100%;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.text-area{
+  margin-top: 1rem;
+}
+
+.buttons-area{
+  margin-top: 1rem;
+}

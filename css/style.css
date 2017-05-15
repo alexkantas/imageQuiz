@@ -15,10 +15,31 @@
   display: block;
 }
 
-.text-area{
+.start-title{
+  margin-top: 20vh;
+}
+
+.end-title{
+  margin-top: 25vh;
+}
+
+.text-container{
   margin-top: 1rem;
+  position: relative;
+  height: 3rem;
+}
+
+.text-area{
+  left: 10%;
+  position: absolute;
 }
 
 .buttons-area{
   margin-top: 1rem;
+}
+
+@media screen and (min-width:23rem){
+  .buttons-area{
+  letter-spacing: 2rem;
+  }
 }

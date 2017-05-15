@@ -21,7 +21,7 @@
 				<li><a href="#">Log Out</a></li>
 			</ul>
 			<ul id="nav-mobile" class="side-nav">
-				<li><a href="#">Navbar Link</a></li>
+				<li><a href="#">Profile</a></li>
 				<li><a href="#">Log Out</a></li>
 			</ul>
 			<a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
@@ -33,23 +33,35 @@
 			<div class="col s12 m7 offset-m3">
 
 				<div class="image-container z-depth-3">
-					<img id="image" class="image-area" src="images/emma.jpg">
-				</div>
 
-				<div class="center-align">
-					<h5 id="text" class="text-area">My name is Emma</h5>
-					<div class="buttons-area">
-						<button class="orange accent-3 waves-effect waves-light btn-large"><i class="material-icons left">arrow_left</i>Prev</button>
-						<button class="orange accent-3 waves-effect waves-light btn-large"><i class="material-icons right">arrow_right</i>Next</button>
+					<div id="start" class="start-title center-align">
+						<h3 id="start-title" class="red-text text-darken-3">Memorize the name of each face</h3>
 					</div>
+
+						<div id="end" class="end-title center-align" style="display:none">
+							<button id="start-button" class="pulse red darken-3 waves-effect waves-light btn-large">Start the Game !</button>
+						</div>
+
+						<img id="image" class="image-area">
+					</div>
+
+					<div class="text-container">
+						<h5 id="text" class="text-area" style="display:none">My name is <span id="name"></span></h5>
+					</div>
+
+					<div class="center-align">
+						<div class="buttons-area">
+							<button id="previous" class="orange accent-3 waves-effect waves-light btn-large"><i class="material-icons left">arrow_left</i>Prev</button>
+							<button id="next" class="orange accent-3 waves-effect waves-light btn-large"><i class="material-icons right">arrow_right</i>Next</button>
+						</div>
+					</div>
+
 				</div>
 
-	</div>
-
-	<!--  Scripts-->
-	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-	<script src="js/materialize.js"></script>
-	<script src="js/main.js"></script>
+				<!--  Scripts-->
+				<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+				<script src="js/materialize.js"></script>
+				<script src="js/main.js"></script>
 
 </body>
 

@@ -4,7 +4,7 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
-	<title>Game 1</title>
+	<title>ImageQuiz</title>
 	<!-- CSS  -->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
@@ -38,30 +38,32 @@
 						<h3 id="start-title" class="red-text text-darken-3">Memorize the name of each face</h3>
 					</div>
 
-						<div id="end" class="end-title center-align" style="display:none">
-							<button id="start-button" class="pulse red darken-3 waves-effect waves-light btn-large">Start the Game !</button>
-						</div>
-
-						<img id="image" class="image-area">
+					<div id="end" class="end-title center-align" style="display:none">
+						<button id="start-button" class="pulse red darken-3 waves-effect waves-light btn-large">Start the Game !</button>
 					</div>
 
-					<div class="text-container">
-						<h5 id="text" class="text-area" style="display:none">My name is <span id="name"></span></h5>
-					</div>
-
-					<div class="center-align">
-						<div class="buttons-area">
-							<button id="previous" class="orange accent-3 waves-effect waves-light btn-large"><i class="material-icons left">arrow_left</i>Prev</button>
-							<button id="next" class="orange accent-3 waves-effect waves-light btn-large"><i class="material-icons right">arrow_right</i>Next</button>
-						</div>
-					</div>
-
+					<img id="image" class="image-area">
 				</div>
 
-				<!--  Scripts-->
-				<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-				<script src="js/materialize.js"></script>
-				<script src="js/main.js"></script>
+				<div class="text-container">
+					<h5 id="text" class="text-area" style="display:none">My name is <span id="name"></span></h5>
+				</div>
+
+				<div class="row">
+					<div class="col s6 m4 offset-m2">
+						<button id="previous"  style="display:none" class="left orange accent-3 waves-effect waves-light btn-large"><i class="material-icons left">arrow_left</i>Prev</button>
+					</div>
+					<div class="col s6 m4">
+					<button id="next" class="right orange accent-3 waves-effect waves-light btn-large"><i class="material-icons right">arrow_right</i>Next</button>
+					</div>
+				</div>
+
+			</div>
+
+			<!--  Scripts-->
+			<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+			<script src="js/materialize.js"></script>
+			<script src="js/main.js"></script>
 
 </body>
 

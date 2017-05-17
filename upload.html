@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+	<meta name="author" content="Kantas.net">
+	<title>ImageQuiz</title>
+	<!-- CSS  -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+	<link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
+</head>
+
+<body>
+
+	<nav class="light-blue lighten-1" role="navigation">
+		<div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">FaceNameGame</a>
+		</div>
+	</nav>
+
+	<div class="container">
+
+		<div class="row margin-top">
+			<form id="upload-form" class="col s12 m8 offset-m2" action="/actions/upload.php" method="post" enctype="multipart/form-data">
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="email" type="text" name="imgUrl" class="validate">
+						<label for="email">ImageURL</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class=" col s6">
+						Save image locally
+					</div>
+					<div class=" col s6">
+
+						<div class="switch">
+							<label>
+								no
+								<input type="checkbox"  name="localStore">
+								<span class="lever"></span>
+								yes
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="email" type="text" name="name" class="validate">
+						<label for="email">Name</label>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12">
+						<input id="password" type="password" name="password" class="validate">
+						<label for="password">Password</label>
+					</div>
+				</div>
+
+				Use a local image file. In this case the url above will be ignored.
+
+				<div class="file-field input-field">
+					<div class="btn">
+						<span>File</span>
+						<input type="file" name="image">
+					</div>
+					<div class="file-path-wrapper">
+						<input class="file-path validate" type="text">
+					</div>
+				</div>
+				<button class="btn waves-effect waves-light" type="submit">Submit
+					<i class="material-icons right">send</i>
+				</button>
+			</form>
+		</div>
+
+	</div>
+
+	<!--  Scripts-->
+	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+	<script src="js/materialize.js"></script>
+	<script src="js/main.js"></script>
+
+</body>
+
+</html>

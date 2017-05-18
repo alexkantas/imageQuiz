@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
+	<meta name="author" content="Kantas.net">
+	<title>ImageQuiz</title>
+	<!-- CSS  -->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection" />
+	<link href="/css/style.css" type="text/css" rel="stylesheet" media="screen,projection" />
+
+</head>
+
+<body>
+
+	<nav class="light-blue lighten-1" role="navigation">
+		<div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">FaceNameGame</a>
+		</div>
+	</nav>
+
+	<div class="container">
+
+		<div class="row margin-top">
+			<div class="col s12 m8 offset-m2">
+				<ul id="questionList" class="collection">
+				</ul>
+
+				<div id="preloader" class="center-align">
+					<div class="preloader-wrapper big active">
+						<div class="spinner-layer spinner-blue-only">
+							<div class="circle-clipper left">
+								<div class="circle"></div>
+							</div>
+							<div class="gap-patch">
+								<div class="circle"></div>
+							</div>
+							<div class="circle-clipper right">
+								<div class="circle"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<!--  Scripts-->
+		<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script src="/js/materialize.js"></script>
+		<script src="/js/main.js"></script>
+		<script>
+			showAll("/data/quizData.json")
+		</script>
+
+</body>
+
+</html>

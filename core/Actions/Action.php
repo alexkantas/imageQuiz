@@ -6,29 +6,39 @@ class Action {
 
     private $coreData=[];
 
-    function __construct($coreData=[]){
+    public function __construct($coreData=[]){
         $this->coreData = $coreData;
     }
 
-    function showMessage($message){
+    public function showMessage($message){
     echo $message;
     }
 
-    function showErrorMessage(){
+    public function showErrorMessage(){
         $this->showMessage("<p>Oups!</p><p>An Error occupied!</p>");
         die();
     }
 
-    function authorizedError(){
+    public function authorizedError(){
         $this->showMessage("<p>You are not authorized for this action!</p>");
         die();
     }
 
-    function validate($password){
+    public function validate($password){
         if($password===$this->coreData["password"]){
             return true;
         }
         $this->authorizedError();
+    }
+
+    public static function validateUser(){
+        if(isset($_SESSION['isAdmin'])){
+            if($_SESSION['isAdmin'] === 1){
+            return true;
+            }
+        }
+        echo '<p>You are not authorized for this action!</p>';
+        die();
     }
 
 }

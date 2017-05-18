@@ -2,10 +2,11 @@
 
 require '../vendor/autoload.php';
 
+session_start();
+
 $action = new Kantas_net\Actions\Action((require '../data/coreData.php'));
 
-$password = $_REQUEST['password'] ?? "";
-$action->validate($password);
+$action->validateUser();
 
 $name = $_REQUEST['name'] ?? "";
 
@@ -25,13 +26,14 @@ if($localImage !== ""){
 $imageURL = $_REQUEST['imgUrl'] ?? "";
 $localStorage = $_REQUEST['localStore'] ?? "";
 
+if(!filter_var($imageURL, FILTER_VALIDATE_URL)){
+    $action->showMessage("Image URL is not valid!");
+    die();
+}
+
 if($localStorage==="on"){
-    if(!filter_var($imageURL, FILTER_VALIDATE_URL)){
-        $action->showMessage("Image URL is not valid!");
-        die();
-    }
     $imageURL = Kantas_net\Actions\ImageActions\Image::resizeSave($imageURL,368);
 }
 
-var_dump($imageURL,$name,$password,$localStorage,filter_var($imageURL, FILTER_VALIDATE_URL));
+var_dump($imageURL,$name,$localStorage,filter_var($imageURL, FILTER_VALIDATE_URL));
 

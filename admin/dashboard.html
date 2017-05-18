@@ -15,6 +15,21 @@
 
 <body>
 
+	<!-- Modal -->
+	<div id="delete-modal" class="modal">
+		<div class="modal-content">
+			<h4>Are you sure ?</h4>
+			<p id="confirm-message">Delete the image with id {{id}} and name {{name}}</p>
+			<p>This action will be not reversal !</p>
+		</div>
+		<div class="modal-footer">
+			<form action="/admin/delete.php" method="get">
+				<input id="inputdata" type="hidden" name="id" value="">
+				<button type="submit" class="modal-action modal-close waves-effect waves-red btn-flat">Yes, delete it!</button>
+			</form>
+		</div>
+	</div>
+
 	<nav class="light-blue lighten-1" role="navigation">
 		<div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">FaceNameGame</a>
 		</div>

@@ -47,4 +47,8 @@ class Action {
         die();
     }
 
+    public static function isLocalImage($path){
+        return substr($path,0,8) === '/images/' ? true : false ;
+    }
+
 }

@@ -11,4 +11,5 @@ return array(
     'Kantas_net\\Actions\\QuizAction' => $baseDir . '/core/Actions/QuizAction.php',
     'Kantas_net\\Database\\Connection' => $baseDir . '/core/Database/Connection.php',
     'Kantas_net\\Database\\QueryBuilder' => $baseDir . '/core/Database/QueryBuilder.php',
+    'Kantas_net\\Question' => $baseDir . '/core/Question.php',
 );

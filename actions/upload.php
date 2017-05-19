@@ -2,13 +2,12 @@
 
 require '../vendor/autoload.php';
 
-session_start();
+$quizAction = new Kantas_net\Actions\QuizAction;
 
-$action = new Kantas_net\Actions\Action((require '../data/coreData.php'));
+$action = new Kantas_net\Actions\Action;
 
-$action->validateUser();
-
-$name = $_REQUEST['name'] ?? "";
+$name = $_POST['name'];
+$level = $_POST['level'];
 
 if($name === ""){
     $action->showMessage("Name is not Defined!");
@@ -18,22 +17,21 @@ if($name === ""){
 $localImage = $_FILES['image']['tmp_name'] ?? "";
 
 if($localImage !== ""){
-    $imageURL =Kantas_net\Actions\ImageActions\Image::resizeSave($localImage,368);
-    echo 'Good!';
+    $question = new Kantas_net\Question($name,$level,$localImage);
+    $quizAction->addQuestion($question);
+    echo "Image added Succefully!";
+    header( "refresh:2;url='/admin/dashboard.html'" );
     die();
 }
 
-$imageURL = $_REQUEST['imgUrl'] ?? "";
-$localStorage = $_REQUEST['localStore'] ?? "";
+$imageURL = $_POST['imgUrl'] ;
+$localStorage = $_POST['localStore'] ?? "" ;
 
-if(!filter_var($imageURL, FILTER_VALIDATE_URL)){
-    $action->showMessage("Image URL is not valid!");
-    die();
-}
 
-if($localStorage==="on"){
-    $imageURL = Kantas_net\Actions\ImageActions\Image::resizeSave($imageURL,368);
-}
+$question = new Kantas_net\Question($name,$level,$localImage,$imageURL,$localStorage);
+$quizAction->addQuestion($question);
 
-var_dump($imageURL,$name,$localStorage,filter_var($imageURL, FILTER_VALIDATE_URL));
+echo "Image added Succefully!";
+header( "refresh:2;url='/admin/dashboard.html'" );
+die();
 

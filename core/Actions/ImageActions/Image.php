@@ -18,6 +18,6 @@ class Image {
         $date = (new \DateTime())->format('U'); //timestamp
         $path = "images/$date.jpg";
         $image->save("../".$path);
-        return $path;
+        return "/".$path;
     }
 }

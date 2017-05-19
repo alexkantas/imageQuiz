@@ -46,6 +46,7 @@ class ComposerStaticInit5182c4be239cfcace28d6a812f217989
         'Kantas_net\\Actions\\QuizAction' => __DIR__ . '/../..' . '/core/Actions/QuizAction.php',
         'Kantas_net\\Database\\Connection' => __DIR__ . '/../..' . '/core/Database/Connection.php',
         'Kantas_net\\Database\\QueryBuilder' => __DIR__ . '/../..' . '/core/Database/QueryBuilder.php',
+        'Kantas_net\\Question' => __DIR__ . '/../..' . '/core/Question.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

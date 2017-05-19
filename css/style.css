@@ -19,6 +19,10 @@
   margin-top: 20vh;
 }
 
+.start-level{
+  margin-top: 15vh;
+}
+
 .end-title{
   margin-top: 25vh;
 }
@@ -47,8 +51,18 @@
             user-select: none; /* Chrome and Opera */
 }
 
+.full-width{
+  width: 100%;
+}
+
 @media screen and (min-width:23rem){
   .buttons-area{
   letter-spacing: 2rem;
+  }
+}
+
+@media screen and (max-width:33rem){   
+  #time-icon{
+    display: none;
   }
 }

@@ -23,7 +23,7 @@
 	<div class="container">
 
 		<div class="row margin-top">
-			<form id="upload-form" class="col s12 m8 offset-m2" action="/actions/upload.php" method="post" enctype="multipart/form-data">
+			<form id="upload-form" class="col s12 m8 offset-m2" action="/actions/upload.php" method="POST" enctype="multipart/form-data">
 				<div class="row">
 					<div class="input-field col s12">
 						<input id="email" type="text" name="imgUrl" class="validate">
@@ -32,7 +32,7 @@
 				</div>
 				<div class="row">
 					<div class=" col s6">
-						Save image locally
+						Save image locally :
 					</div>
 					<div class=" col s6">
 
@@ -44,6 +44,16 @@
 								yes
 							</label>
 						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class=" col s6">
+						Level :
+					</div>
+					<div class=" col s6">
+						<p class="range-field">
+							<input type="range" name="level" min="1" max="10"  value="1"/>
+						</p>
 					</div>
 				</div>
 				<div class="row">

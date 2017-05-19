@@ -1,5 +1,6 @@
 <?php
-
+/**This file is just for testing various classes and functions
+*/
 require 'vendor/autoload.php';
 
 echo "<h1>Test</h1>";

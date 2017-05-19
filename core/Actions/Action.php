@@ -15,8 +15,11 @@ class Action {
     }
 
     public function showErrorMessage(){
-        $this->showMessage("<p>Oups!</p><p>An Error occupied!</p>");
-        die();
+    header('Content-type: application/json');
+    echo json_encode([
+                "status"=>"error",
+                "error_msg"=>"<p>Oups!</p><p>An Error occupied!</p>"]);
+    die();
     }
 
     public function authorizedError(){
@@ -37,7 +40,10 @@ class Action {
             return true;
             }
         }
-        echo '<p>You are not authorized for this action!</p>';
+        header('Content-type: application/json');
+        echo json_encode([
+                "status"=>"error",
+                "error_msg"=>"You are not authorized for this action"]);
         die();
     }
 

@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<!--
+Copyright 2017 Kantas.net
+Released under the Apache Version 2.0 License
+( http://www.apache.org/licenses/LICENSE-2.0 )
+-->
 <html lang="en">
 
 <head>
@@ -42,7 +47,7 @@
 						<p><span class="red-text text-darken-1">Time</span> is running so answer as fast you can!</p>
 					</div>
 
-					<form id="end" action="/test.php" class="end-title center-align" style="display:none">
+					<form id="end" action="results.php" method="POST" class="end-title center-align" style="display:none">
 						<input id="dataSend" type="hidden" name="json">
 						<button id="results-button" class="pulse light-green waves-effect waves-light btn-large">See your Score !</button>
 					</form>
@@ -70,8 +75,10 @@
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script src="js/materialize.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/cookie.js"></script>
 	<script>
-		startGame("/data/quizData.json", 5);
+		var level = Cookies.get('level') || 1 ;
+		startGame("actions/quizLevelData.php",level) ;
 	</script>
 </body>
 

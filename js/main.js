@@ -1,4 +1,4 @@
-/**
+/*!
 Copyright 2017 Kantas.net
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -13,6 +13,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
  */
+var ROOTPATH = "" // Sets the root of Application www.example.com/ROOTPATH
 
 function startGame(url, level) {
   var quizData = [];
@@ -110,7 +111,9 @@ function startGame(url, level) {
       var value = $(this).val().trim().toLowerCase();
       if (value === name.toLowerCase()) {
         completeQuestion();
+        return;
       }
+      Materialize.toast('No! Try again!', 2000);
     });
 
     $help.on('click', function () {
@@ -130,7 +133,7 @@ function startGame(url, level) {
 
   function startQuestion() {
     $next.removeClass('scale-in');
-    load(quizData[index].image);
+    load(ROOTPATH+quizData[index].image);
     addListeners(quizData[index].name);
     currentAnswer = Answer(quizData[index].id);
     $answer.val('');
@@ -151,7 +154,7 @@ function startGame(url, level) {
 }
 
 
-function loadFaces(url) {
+function loadFaces(url,level) {
   var quizData = [];
   var index = -1;
   var $start = $('#start');
@@ -161,11 +164,19 @@ function loadFaces(url) {
   var $name = $('#name');
   var $prev = $('#previous');
   var $next = $('#next');
+  var $levelText = $('#level');
 
-  $.getJSON(url, function (data) {
-    console.log(data);
-    quizData = data;
+    $.ajax({
+    type: "POST",
+    url: url,
+    dataType: "JSON",
+    data: { "level": level }
   })
+    .done(function (data) {
+      quizData = data;
+      $levelText.text(level);
+      $next.focus();
+    })
     .always(function () {
       if (quizData.length < 1) {
         console.log(quizData.length);
@@ -201,6 +212,7 @@ function loadFaces(url) {
       $start.hide();
       $text.show();
       $prev.show();
+      $next.focus();
     }
     if (index === quizData.length - 1) {
       $end.hide();
@@ -209,12 +221,13 @@ function loadFaces(url) {
     }
     if (index === quizData.length) {
       $end.show();
+      $('#start-button').focus();
       $text.hide();
       $next.hide();
       load('', '');
       return;
     }
-    load(quizData[index].image, quizData[index].name);
+    load(ROOTPATH+quizData[index].image, quizData[index].name);
   }
 
   function load(image, name) {
@@ -240,7 +253,7 @@ function showAll(url) {
   $.getJSON(url, function (data) {
     data.forEach(function (question) {
       questionBlock = questionBlockTemplate
-        .replace(/{image}/g, question.image)
+        .replace(/{image}/g, ROOTPATH+question.image)
         .replace(/{id}/g, question.id)
         .replace(/{name}/g, question.name)
         .replace(/{level}/g, question.level);

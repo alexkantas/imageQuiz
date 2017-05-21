@@ -2,8 +2,10 @@
 /**This file is just for testing various classes and functions
 */
 
-$json = $_REQUEST['json'];
+// $json = $_REQUEST['json'];
 
-$array = json_decode($json);
+// $array = json_decode($json);
 
-var_dump($array);
+// var_dump($array);
+
+//header( "refresh:5;url='/'" );

@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<!--
+Copyright 2017 Kantas.net
+Released under the Apache Version 2.0 License
+( http://www.apache.org/licenses/LICENSE-2.0 )
+-->
 <html lang="en">
 
 <head>
@@ -26,12 +31,15 @@
 
 				<div class="image-container z-depth-3">
 
-					<div id="start" class="start-title center-align">
-						<h3 id="start-title" class="red-text text-darken-3">Memorize the name of each face</h3>
+					<div id="start" class="start-level center-align">
+						<div id="start-title" class="red-text text-darken-3">
+							<h3>level <span id="level"></span></h3>
+							<h3>Memorize the name of each face</h3>
+							</div>
 					</div>
 
 					<div id="end" class="end-title center-align" style="display:none">
-						<a href="/gameOn.html" id="start-button" class="pulse red darken-3 waves-effect waves-light btn-large">Start the Game !</a>
+						<a href="gameOn.html" id="start-button" class="pulse red darken-3 waves-effect waves-light btn-large">Start the Game !</a>
 					</div>
 
 					<img id="image" class="image-area">
@@ -58,8 +66,10 @@
 	<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 	<script src="js/materialize.js"></script>
 	<script src="js/main.js"></script>
+	<script src="js/cookie.js"></script>
 	<script>
-		loadFaces("/data/quizData.json");
+		var level = Cookies.get('level') || 1 ;
+		loadFaces("actions/quizLevelData.php",level);
 	</script>
 </body>
 

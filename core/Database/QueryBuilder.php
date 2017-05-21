@@ -20,6 +20,18 @@ class QueryBuilder{
 
     }
 
+    public function selectAllWhere($table,$attribute,$value){
+    
+    $query = sprintf("SELECT * FROM %s WHERE %s = %s",$table,$attribute,$value);
+
+    $statement = $this->pdo->prepare($query);
+
+    $statement->execute();
+
+    return $statement->fetchAll(\PDO::FETCH_CLASS);
+
+    }
+
     public function selectWhere($table,$attribute,$value){
     
     $query = sprintf("SELECT * FROM %s WHERE %s = %s LIMIT 1",$table,$attribute,$value);

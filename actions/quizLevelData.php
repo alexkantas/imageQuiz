@@ -4,6 +4,6 @@ require '../vendor/autoload.php';
 
 $quizAction = new Kantas_net\Actions\QuizAction;
 
-$id = $_POST['id'] ;
+$level = $_POST['level'] ;
 
-$quizAction->removeQuestion($id);
+$quizAction->showLevelQuestions($level);

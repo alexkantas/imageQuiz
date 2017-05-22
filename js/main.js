@@ -15,6 +15,10 @@ limitations under the License.
  */
 var ROOTPATH = "" // Sets the root of Application www.example.com/ROOTPATH
 
+function setRootpath(rootpath){
+  ROOTPATH = rootpath;
+}
+
 function startGame(url, level) {
   var quizData = [];
   var index = -1;

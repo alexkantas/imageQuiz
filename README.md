@@ -1,6 +1,6 @@
 # Image Quiz Game
 
-Web based game developed with Javascript, MaterializeCSS and PHP
+Web based game developed with Javascript, [MaterializeCSS](http://materializecss.com/) and PHP
 
 You can play [here](https://projects.kantas.net/imageQuiz)
 
@@ -16,11 +16,12 @@ Admin can upload photos, locally or fetch an extrernal URL, and set the attribut
 ## Game Start
 
 The game start in `index.html` file.
-The `loadFaces(url,level)` should be call for the initialization of the game
+
+The `loadFaces(url,level)` javacript function should be call for the initialization of the game
 
 The `level` agrument is used for POST to server witch level questions we need
 
-The `url` should sent a JSON response like this
+The `url` should receive a JSON response like this
 
 ```json
 [
@@ -44,14 +45,18 @@ Player's answers: question, number of help clicks, and time are stored in a JSON
 
 ## Upload an image
 
-In `admin\upload.html` you can upload an image from your computer or fetch from an exteral URL.
-`actions\upload.php` checks if the file/URL is valid and saves it.
+In `admin\upload.html` you can upload an image from your computer or fetch from an exteral URL
+
+`actions\upload.php` checks if the file/URL is valid and saves it with help of [Intervention Image](http://image.intervention.io/) library
 
 ## Database set up
 
-To run this application you should deploy to PHP server with Mysql/MariaDB running
+To run this application you should deploy the files to a PHP server with Mysql or MariaDB running
+
 Setup the `data\configDB.php` with your database crendentials
-Crete the table below
+
+Crete the table below in your database
+
 ```sql
 CREATE TABLE `questions` (
 	`id` INT(10) UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -64,5 +69,6 @@ CREATE TABLE `questions` (
 
 ## Run without back-end
 
-You can run the `index.html` , `gameOn.html` ,`admin\dashboard.html` by providing a url of a static JSON file in a format as stated above at `loadFaces` `startGame` `showAll` javascript functons
-Although you should still run this from a http server cause the cross origin policies
+You can run the `index.html` , `gameOn.html` ,`admin\dashboard.html` by providing a url of a static JSON file, in a format as stated above, at `loadFaces` `startGame` `showAll` javascript functons
+
+_Although you should still run this from a http server cause the cross origin policies_
